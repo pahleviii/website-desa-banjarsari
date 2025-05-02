@@ -1,0 +1,762 @@
+/* =======================================================
+   1. Reset Dasar & Global Styles
+   ======================================================= */
+/* Reset konfigurasi default agar tampilan konsisten di semua browser */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Definisikan variabel global untuk kemudahan tema dan konsistensi */
+  :root {
+    --primary-color: #333;
+    --secondary-color: #90997f;
+    --accent-color: #afb59d;
+    --font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    --hero-height: 60vh;
+  }
+  
+  /* Global base styling */
+  body {
+    font-family: var(--font-family);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    line-height: 1.6;
+  }
+  
+  /* Container digunakan untuk membatasi lebar konten dengan margin otomatis */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* =======================================================
+     2. Styling Bagian Header dan Navigasi
+     ======================================================= */
+  header {
+    background-color: var(--secondary-color);
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  
+  /* Header container dengan Flexbox agar logo dan navigasi sejajar secara horizontal */
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Logo di header, batas maksimal tinggi agar tidak terlalu besar */
+  header img.logo {
+    max-height: 50px;
+  }
+  
+  /* Navigasi dasar: tampilan horizontal dengan list tanpa bullet */
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav li {
+    margin: 0 15px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  /* Warna berubah saat hover atau jika link aktif */
+  nav a:hover,
+  nav a.active {
+    color: var(--accent-color);
+  }
+  
+  /* =======================================================
+     3. Styling Bagian Hero (Banner Utama)
+     ======================================================= */
+  .hero {
+    position: relative;
+    height: var(--hero-height);
+    overflow: hidden;
+  }
+  
+  .hero img.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan gambar menutupi area tanpa distorsi */
+  }
+  
+  /* Overlay untuk memberikan efek gelap sehingga teks benar-benar terlihat */
+  .hero .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparan */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero .hero-overlay h1 {
+    color: #fff;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .hero .hero-overlay p {
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling tombol pada hero */
+  .hero .hero-overlay .btn {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hero .hero-overlay .btn:hover {
+    background-color: #0056b3; /* Warna lebih gelap saat hover */
+  }
+  
+  /* =======================================================
+     4. Styling Bagian Quick Info
+     ======================================================= */
+  .quick-info {
+    background-color: #fff;
+    padding: 40px 0;
+  }
+  
+  .quick-info .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  /* Setiap item info (misalnya lokasi, jumlah penduduk, visi & misi) */
+  .quick-info .info-item {
+    flex: 1;
+    min-width: 250px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .quick-info .info-item h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .quick-info .info-item p {
+    font-size: 1em;
+  }
+  
+  /* =======================================================
+     5. Styling Bagian Quick Links
+     ======================================================= */
+  .quick-links {
+    background-color: #f4f4f4;
+    padding: 20px 0;
+  }
+  
+  .quick-links .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  /* Card untuk tautan cepat ke halaman lain */
+  .card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    flex-basis: calc(33% - 20px);
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* =======================================================
+     6. Styling Bagian Footer
+     ======================================================= */
+  footer {
+    background-color: var(--accent-color);
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  footer p {
+    margin: 10px 0;
+    color: #fff;
+  }
+  
+  /* Form aduan di footer */
+  footer form {
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: left;
+  }
+  
+  footer form input,
+  footer form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  footer form button {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  footer form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* =======================================================
+     7. Responsive Design: Media Queries untuk Perangkat Mobile
+     ======================================================= */
+  @media (max-width: 768px) {
+    /* Layout header dijadikan kolom */
+    header .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    /* Navigasi ditampilkan secara vertikal */
+    nav ul {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    nav li {
+      margin: 5px 0;
+    }
+    
+    /* Quick Info: Atur agar setiap item berada di tengah */
+    .quick-info .container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    /* Quick Links: Card mengambil lebar lebih besar */
+    .quick-links .container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .card {
+      flex-basis: 80%;
+      margin: 10px 0;
+    }
+  }
+  
+  /* Styling untuk banner halaman Profil Desa */
+.page-title {
+    background-color: #0056b3; /* Atau bisa menggunakan background-image jika diinginkan */
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .page-title h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .page-title p {
+    font-size: 1.2em;
+  }
+  /* Atur section yang berbeda pada halaman Profil Desa */
+.main-content section {
+    padding: 40px 0;
+    border-bottom: 1px solid #eee; /* Membuat pemisah antar section */
+  }
+  
+  .main-content section:last-child {
+    border-bottom: none;
+  }
+  
+  /* Styling khusus untuk judul setiap section */
+  .main-content h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Konten paragraf di setiap section */
+  .main-content p {
+    font-size: 1em;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+  }
+  
+  /* Jika ada area khusus, misalnya untuk menampilkan peta */
+  .peta-wrapper {
+    margin: 20px auto;
+    max-width: 800px;
+    /* Bisa diisi dengan styling tambahan jika embed peta */
+  }
+/* Styling untuk tab navigasi */
+.tab-nav {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .tab-nav li {
+    margin: 0 15px;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .tab-nav li.active,
+  .tab-nav li:hover {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+  }
+    /* Kontainer untuk konten setiap tab */
+.tab-content {
+    padding: 20px;
+  }
+  
+  /* Menyembunyikan panel yang tidak aktif (dapat diatur lewat JavaScript) */
+  .tab-panel {
+    display: none;
+  }
+  
+  .tab-panel.active {
+    display: block;
+  }
+/* Sama seperti Profil, tetapi bisa menggunakan warna berbeda */
+.page-title {
+    background: url('../images/wisata-banner.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+  }
+/* Styling untuk informasi praktis seperti jam operasional, HTM, dan kontak */
+.info-praktis ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: left;
+    font-size: 1.1em;
+  }
+  
+  .info-praktis li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .info-praktis li:last-child {
+    border-bottom: none;
+  }
+/* Kontainer galeri */
+.galeri {
+    max-width: 1000px;
+    margin: 40px auto;
+    position: relative;
+  }
+  
+  /* Gambar dalam galeri */
+  .galeri img {
+    width: 100%;
+    display: block;
+  }
+  
+  /* Jika menambahkan panah navigasi misal di slider */
+  .galeri .nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .galeri .nav-arrow.left {
+    left: 10px;
+  }
+  
+  .galeri .nav-arrow.right {
+    right: 10px;
+  }
+/* Styling untuk tampilan peta */
+.peta-lokasi {
+    max-width: 800px;
+    margin: 40px auto;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .peta-lokasi iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+  }
+
+  .error {
+    border: 2px solid red;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
+  
+  /* Tab Navigation */
+.tab-nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ddd;
+}
+
+.tab-nav li {
+  margin: 0 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.tab-nav li.active {
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+/* Tab Content */
+.tab-content {
+  padding: 20px;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* Container galeri */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Setiap slide */
+.carousel-slide {
+  display: none;
+}
+
+.carousel-slide.active {
+  display: block;
+}
+
+/* Gambar di dalam slide */
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Navigasi panah */
+.carousel-nav span {
+  -webkit-user-select: none; /* Mendukung Safari dan iOS Safari */
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.carousel-nav span {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  font-size: 1.5em;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-nav span:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.profil-nav {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.profil-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.profil-nav li {
+  margin: 0 15px;
+}
+
+.profil-nav a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.profil-nav a:hover {
+  color: var(--secondary-color);
+}
+
+/* --- Profil Section --- */
+.profil-section {
+  padding: 60px 0;
+}
+
+.profil-section.alternate {
+  background: #f9f9f9;
+}
+
+.profil-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+/* --- Peta Wrapper --- */
+.peta-wrapper {
+  margin: 20px auto;
+  max-width: 800px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.peta-wrapper iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+}
+
+/* --- Hero Slider --- */
+.hero-slider {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.hero-slider .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.hero-slider .slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.hero-slider .overlay {
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-content {
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.slide-content h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.slide-content p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.btn {
+  color:var(--primary-color);
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  color:#0056b3;
+}
+
+.slider-arrows {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.slider-arrows span {
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  font-size: 2em;
+  transition: background 0.3s ease;
+}
+
+.slider-arrows span:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* --- Informasi Wisata Section --- */
+#informasi-wisata {
+  padding: 60px 0;
+  background: #fff;
+}
+
+#informasi-wisata h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+}
+
+.info-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.info-item {
+  flex: 1 1 300px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: center; /* Menjadikan isi teks di dalam kotak terpusat */
+}
+
+.info-item h3 {
+  margin-top: 0;
+  color: var(pr);
+  font-size: 1.5em;
+}
+
+
+/* --- Featured Destinations --- */
+#destinations {
+  padding: 60px 0;
+  background: #f4f4f4;
+}
+
+#destinations h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+}
+
+.destination-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.destination-card {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+  max-width: 400px;
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-10px);
+}
+
+.destination-card img {
+  width: 100%;
+  display: block;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h3 {
+  margin: 0 0 10px;
+  font-size: 1.5em;
+}
+
+.card-content p {
+  font-size: 1em;
+  color: #555;
+}

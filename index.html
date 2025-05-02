@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selamat Datang di Desa Banjarsari</title>
+  <link rel="stylesheet" href="/CSS/main.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <img src="/Assets/logo.png" alt="Logo Desa" class="logo">
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="profil.html">Profil Desa</a></li>
+          <li><a href="layanan.html">Layanan Publik</a></li>
+          <li><a href="wisata.html">Wisata</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="/Assets/hero.jpg" alt="Gambaran Desa" class="hero-image">
+    <div class="hero-overlay">
+      <h1>Selamat Datang di Desa Banjarsari</h1>
+      <p>Desa dengan sejarah dan potensi yang luar biasa</p>
+      <a href="profil.html" class="btn">Selengkapnya</a>
+    </div>
+  </section>
+
+  <!-- Informasi Singkat -->
+  <section class="quick-info">
+    <div class="container">
+      <div class="info-item">
+        <h2>Lokasi</h2>
+        <p>Desa Banjarsari, Kec. Bandarkedungmulyo, Kab. Jombang</p>
+      </div>
+      <div class="info-item">
+        <h2>Jumlah Penduduk</h2>
+        <p>[Jumlah Penduduk]</p>
+      </div>
+      <div class="info-item">
+        <h2>Visi & Misi</h2>
+        <p>Ringkasan singkat mengenai visi dan misi desa.</p>
+        <a href="profil.html#visi-misi" class="btn">Baca Selengkapnya</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Links -->
+  <section class="quick-links">
+    <div class="container">
+      <a href="profil.html" class="card">Profil Desa</a>
+      <a href="layanan.html" class="card">Layanan Publik</a>
+      <a href="wisata.html" class="card">Wisata</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>Alamat: Desa Banjarsari, Kec. Bandarkedungmulyo, Kab. Jombang.| Telepon: [Nomor Telepon]</p>
+      <!-- Form Aduan -->
+      <form id="aduan-form" action="#" method="POST">
+        <div>
+          <input type="text" name="nama" placeholder="Nama Anda">
+          <small class="error-message"></small>
+        </div>
+        <div>
+          <input type="email" name="email" placeholder="Email Anda">
+          <small class="error-message"></small>
+        </div>
+        <div>
+          <textarea name="pesan" placeholder="Sampaikan Aduan atau Saran"></textarea>
+          <small class="error-message"></small>
+        </div>
+        <button type="submit">Kirim</button>
+      </form>
+      
+      <p>&copy; 2025 Desa Banjarsari, Kec. Bandarkedungmulyo, Kab. Jombang. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/Javascript/main.js"></script>
+</body>
+</html>
