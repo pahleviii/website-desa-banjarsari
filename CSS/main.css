@@ -136,33 +136,79 @@
   /* =======================================================
      4. Styling Bagian Quick Info
      ======================================================= */
-  .quick-info {
-    background-color: #fff;
-    padding: 40px 0;
+  /* Quick-Info Section */
+.quick-info {
+  background: #f9f9f9;
+  padding: 60px 0;
+}
+
+.quick-info .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.info-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.info-card {
+  flex: 1 1 300px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-card h3 {
+  font-size: 1.6em;
+  margin-bottom: 15px;
+  color: var(--accent-color, #007BFF);
+}
+
+.info-card p {
+  font-size: 1em;
+  margin: 10px 0;
+  color: #333;
+}
+
+.info-card a.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: var(--accent-color, #007BFF);
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.info-card a.btn:hover {
+  background: #0056b3;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .info-cards {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .quick-info .container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  .info-card {
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 20px;
   }
-  
-  /* Setiap item info (misalnya lokasi, jumlah penduduk, visi & misi) */
-  .quick-info .info-item {
-    flex: 1;
-    min-width: 250px;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .quick-info .info-item h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-  }
-  
-  .quick-info .info-item p {
-    font-size: 1em;
-  }
+}
+
   
   /* =======================================================
      5. Styling Bagian Quick Links
@@ -247,6 +293,32 @@
       flex-direction: column;
       align-items: flex-start;
     }
+    @media (max-width: 768px) {
+  .visimisi-content {
+    flex-direction: column;
+  }
+  @media (max-width: 768px) {
+  .struktur-content {
+    flex-direction: column;
+  }
+  .struktur-image,
+  .struktur-text {
+    flex: 1 1 100%;
+  }
+}
+@media (max-width: 768px) {
+  .potensi-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+}
+/* Responsive Text Alignment: Anda bisa mengubah text-align ke justify atau center sesuai keinginan */
+@media (max-width: 768px) {
+  .info-box p {
+    text-align: left;
+  }
+}
     
     /* Navigasi ditampilkan secara vertikal */
     nav ul {
@@ -301,7 +373,317 @@
   .main-content section:last-child {
     border-bottom: none;
   }
-  
+/* profle section */
+.profil-section {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.profil-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  color: var(--accent-color);
+}
+
+.sejarah-content p {
+  text-align: justify;
+  margin-bottom: 20px;
+  line-height: 1.8;
+  font-size: 1.1em;
+}
+
+/* --- Section Visi & Misi --- */
+#visimisi {
+  padding: 60px 0;
+  /* Background gradient yang lembut untuk kesan modern */
+  background: linear-gradient(135deg, #f6f9fc, #e9eff5);
+}
+
+#visimisi h2 {
+  text-align: center;
+  color: var(--accent-color);
+  margin-bottom: 40px;
+  font-size: 2.5em;
+}
+
+/* Layout dua kolom dengan flex */
+.visimisi-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.visimisi-content .visi,
+.visimisi-content .misi {
+  flex: 1;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;      /* Semua teks di dalamnya rata tengah */
+  transition: transform 0.3s ease;
+}
+
+.visimisi-content .visi:hover,
+.visimisi-content .misi:hover {
+  transform: translateY(-5px);
+}
+
+.visimisi-content h3 {
+  margin-bottom: 20px;
+  color: var(--accent-color);
+  font-size: 1.8em;
+}
+
+.visimisi-content p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Styling untuk daftar misi */
+.visimisi-content .misi ul {
+  list-style: none;
+  padding: 0;
+}
+
+.visimisi-content .misi ul li {
+  font-size: 1.1em;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 25px;
+}
+
+/* Menambahkan ikon cek sebagai marker */
+.visimisi-content .misi ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+}
+
+/* --- Section Geografis & Demografi --- */
+#geodemografi {
+  padding: 60px 0;
+  background: #f4f4f4;
+}
+
+#geodemografi h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  color: var(--accent-color);
+}
+
+/* Layout dua kolom (cards) */
+.geo-demo-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Card styling untuk Geografis dan Demografi */
+.geo-card, .demo-card {
+  flex: 1 1 450px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.geo-card:hover, .demo-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Judul Card */
+.geo-card h3, .demo-card h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+  font-size: 1.8em;
+}
+
+/* List styling untuk informasi */
+.info-list {
+  list-style: none;
+  padding: 0;
+  font-size: 1em;
+  line-height: 1.6;
+  color: #555;
+}
+
+.info-list li {
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 20px;
+}
+
+/* Tambahkan marker sederhana untuk setiap item */
+.info-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-size: 1.2em;
+}
+
+/* Sub-list styling untuk daftar di dalam item */
+.sub-list {
+  list-style: none;
+  padding: 5px 0 0 20px;
+  font-size: 0.95em;
+  color: #777;
+}
+
+.sub-list li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 15px;
+}
+
+.sub-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-size: 1em;
+}
+
+/* --- Section Potensi Desa --- */
+#potensi-desa {
+  padding: 60px 0;
+  background: #fff;
+}
+
+#potensi-desa h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  color: var(--accent-color);
+}
+
+/* Layout dua card untuk potensi pertanian dan peternakan */
+.potensi-content {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.potensi-item {
+  flex: 1 1 450px;
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.potensi-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Judul dan Subjudul di dalam card */
+.potensi-item h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+  font-size: 1.8em;
+}
+
+.potensi-item h4 {
+  margin-top: 20px;
+  color: var(--accent-color);
+  font-size: 1.5em;
+  text-decoration: underline;
+}
+
+/* Paragraf dan list styling */
+.potensi-item p {
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.potensi-item ul {
+  list-style: disc inside;
+  margin-left: 20px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+/* --- Section Struktur Pemerintahan --- */
+#struktur {
+  padding: 60px 0;
+  background: #fff;
+}
+
+#struktur h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  color: var(--accent-color);
+}
+
+/* Layout dua kolom untuk gambar dan teks */
+.struktur-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Kolom gambar */
+.struktur-image {
+  flex: 1 1 450px;
+  text-align: center;
+}
+
+.struktur-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.struktur-image img:hover {
+  transform: scale(1.02);
+}
+
+/* Kolom teks */
+.struktur-text {
+  flex: 1 1 450px;
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.struktur-text p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.struktur-text ul {
+  list-style: disc inside;
+  margin: 0;
+  padding: 0 0 0 20px;
+  font-size: 1em;
+  color: #555;
+}
+
+.struktur-text ul li {
+  margin-bottom: 10px;
+}
+
   /* Styling khusus untuk judul setiap section */
   .main-content h2 {
     font-size: 2em;
@@ -591,6 +973,75 @@
   border: none;
 }
 
+/* Hero Section */
+#hero {
+  position: relative;
+  height: 100vh; /* Mengisi seluruh tampilan layar */
+  background: url('https://via.placeholder.com/1920x1080?text=Desa+Banjarsari') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Overlay gelap untuk memastikan teks terbaca */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+  animation: fadeIn 2s ease-out;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent-color, #007BFF);
+  color: #fff;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+/* Animasi fadeIn */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* --- Hero Slider --- */
 .hero-slider {
   position: relative;
@@ -675,38 +1126,91 @@
   background: rgba(0, 0, 0, 0.8);
 }
 
-/* --- Informasi Wisata Section --- */
-#informasi-wisata {
+/* --- Section Informasi Wisata --- */
+.informasi-wisata-section {
   padding: 60px 0;
-  background: #fff;
+  background: #fefefe;
 }
 
-#informasi-wisata h2 {
+.informasi-wisata-section .container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.informasi-wisata-section h2 {
   text-align: center;
+  font-size: 2.8em;
+  color: var(--accent-color, #007BFF);
   margin-bottom: 40px;
-  font-size: 2.5em;
 }
 
-.info-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-around;
+/* Grid Layout untuk setiap Info Box */
+.informasi-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
-.info-item {
-  flex: 1 1 300px;
-  background: #f9f9f9;
-  padding: 20px;
+.info-box {
+  background: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  text-align: center; /* Menjadikan isi teks di dalam kotak terpusat */
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.info-item h3 {
-  margin-top: 0;
-  color: var(pr);
-  font-size: 1.5em;
+.info-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.info-box h3 {
+  margin-bottom: 15px;
+  font-size: 1.8em;
+  color: var(--accent-color, #007BFF);
+  text-align: center;
+  border-bottom: 2px solid var(--accent-color, #007BFF);
+  padding-bottom: 10px;
+}
+
+.info-box p {
+  font-size: 1em;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: justify;
+}
+
+.info-box ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 15px;
+}
+
+.info-box ul li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.info-box ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent-color, #007BFF);
+  font-size: 1.2em;
+}
+
+.info-box a {
+  color: var(--accent-color, #007BFF);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.info-box a:hover {
+  text-decoration: underline;
 }
 
 
