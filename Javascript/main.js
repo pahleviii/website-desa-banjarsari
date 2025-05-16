@@ -173,4 +173,13 @@ document.querySelectorAll(".tab-nav li").forEach(tab => {
     // Mulai auto slide saat halaman dimuat
     startAutoSlide();
   });
-  
+  document.addEventListener("DOMContentLoaded", function() {
+  const navToggle = document.getElementById("navToggle");
+  const mobileNav = document.getElementById("mobileNav");
+
+  navToggle.addEventListener("click", function() {
+    mobileNav.classList.toggle("active");
+    // Ubah tampilan hamburger ke ikon "close"
+    navToggle.classList.toggle("active");
+  });
+});
