@@ -82,7 +82,8 @@
      ======================================================= */
   .hero {
     position: relative;
-    height: var(--hero-height);
+    min-height: 75vh;
+    padding: 60px 20px;
     overflow: hidden;
   }
   
