@@ -8,27 +8,20 @@
 </head>
 <body>
   <!-- Header -->
-  <header class="mobile-navbar">
-  <div class="mobile-nav-container">
-    <!-- Logo: bisa berupa teks atau gambar -->
-    <a href="index.html" class="nav-logo">Desa Banjarasari</a>
-    <!-- Tombol hamburger -->
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
-  </div>
-  <!-- Menu navigasi yang tersembunyi secara default -->
-  <nav class="mobile-menu" id="mobileNav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="profil.html">Profil Desa</a></li>
-      <li><a href="layanan.html">Layanan Publik</a></li>
-      <li><a href="wisata.html">Wisata</a></li>
-    </ul>
-  </nav>
-</header>
+  <header>
+    <div class="container">
+      <img src="/Assets/logo.png" alt="Logo Desa" class="logo">
+    <button id="navToggle" class="nav-toggle">&#9776;</button>
+      <nav id="mobileNav">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="profil.html">Profil Desa</a></li>
+          <li><a href="layanan.html">Layanan Publik</a></li>
+          <li><a href="wisata.html">Wisata</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <!-- Hero Section -->
   <section class="hero">
