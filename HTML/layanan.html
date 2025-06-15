@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layanan Publik - Desa Banjarsari</title>
+  <link rel="stylesheet" href="/CSS/main.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <img src="/Assets/logo.png" alt="Logo Desa" class="logo">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="profil.html">Profil Desa</a></li>
+          <li><a href="layanan.html" class="active">Layanan Publik</a></li>
+          <li><a href="wisata.html">Wisata</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Title Banner -->
+  <section class="page-title">
+    <div class="container">
+      <h1>Layanan Publik</h1>
+      <p>Cakupan layanan administratif, kesehatan, dan BUMDes di Desa Banjarsari</p>
+    </div>
+  </section>
+
+  <!-- Navigasi Tab untuk Layanan -->
+  <section id="layanan-publik">
+    <div class="container">
+      <!-- Tab Navigation -->
+      <ul class="tab-nav">
+        <li class="active" data-tab="administrasi">Administrasi</li>
+        <li data-tab="kesehatan">Kesehatan</li>
+        <li data-tab="bumdes">BUMDes</li>
+      </ul>
+
+      <!-- Konten masing-masing Tab -->
+      <div class="tab-content">
+        <div id="administrasi" class="tab-panel active">
+          <h2>Layanan Administrasi</h2>
+          <p>Informasi lengkap mengenai layanan administrasi seperti pembuatan akta, KK, dll.</p>
+        </div>
+        <div id="kesehatan" class="tab-panel">
+          <h2>Layanan Kesehatan</h2>
+          <p>Informasi mengenai layanan kesehatan seperti posyandu dan klinik desa.</p>
+        </div>
+        <div id="bumdes" class="tab-panel">
+          <h2>Layanan BUMDes</h2>
+          <p>Informasi mengenai kegiatan usaha desa dan program kerja BUMDes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>Alamat: Desa Banjarsari, Kec. Bandarkedungmulyo, Kab. Jombang. | Telepon: [Nomor Telepon]</p>
+      <form id="aduan-form" action="#" method="POST">
+        <input type="text" name="nama" placeholder="Nama Anda">
+        <input type="email" name="email" placeholder="Email Anda">
+        <textarea name="pesan" placeholder="Sampaikan Aduan atau Saran"></textarea>
+        <button type="submit">Kirim</button>
+      </form>
+      <p>&copy; 2025 Desa Banjarsari, Kec. Bandarkedungmulyo, Kab. Jombang. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/Javascript/main.js"></script>
+</body>
+</html>
